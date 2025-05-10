@@ -1,3 +1,145 @@
+from zipfile import ZipFile
+from pathlib import Path
+
+# HTML content from the generated site
+html_content = """<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Giulia</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: #fdfaf5;
+      color: #333;
+    }
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: bold;
+    }
+    .hero {
+      background-image: url('https://i.imgur.com/ZRQqEAd.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      max-width: 90%;
+      text-align: center;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><strong>Casa Giulia</strong></div>
+      <div>
+        <a href="#storia">Storia</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#contatti">Contatti</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Vivi la Puglia autentica, tra trulli e ulivi secolari</h1>
+  </div>
+
+  <section id="storia">
+    <h2>La nostra storia</h2>
+    <p>Casa Giulia nasce dal legame profondo con la terra di famiglia. Ezio, Domenico e Luca hanno custodito questo angolo di paradiso tra i trulli, rinnovandolo con amore per accogliere chi cerca pace, autenticità e bellezza.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://i.imgur.com/6Jz5Cnh.jpg" alt="Trullo" />
+      <img src="https://i.imgur.com/zYxzcrv.jpg" alt="Ulivi" />
+      <img src="https://i.imgur.com/ZRQqEAd.jpg" alt="Vista Casa Giulia" />
+    </div>
+  </section>
+
+  <section id="servizi">
+    <h2>Servizi</h2>
+    <ul>
+      <li>Accoglienza familiare</li>
+      <li>Giardino mediterraneo e orto</li>
+      <li>Zona relax con amaca</li>
+      <li>Wi-Fi e smart working ready</li>
+    </ul>
+  </section>
+
+  <section id="contatti">
+    <h2>Contattaci</h2>
+    <p>Email: info@casagiulia.it</p>
+    <p>Telefono: +39 333 1234567</p>
+    <p>Instagram: @casagiulia_trulli</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Casa Giulia. Tutti i diritti riservati.
+  </footer>
+</body>
+</html>
+"""
+
+# Save the HTML to a file
+html_path = Path("/mnt/data/index.html")
+html_path.write_text(html_content, encoding="utf-8")
+
+# Create ZIP archive
+zip_path = Path("/mnt/data/casa_giulia_site.zip")
+with ZipFile(zip_path, 'w') as zipf:
+    zipf.write(html_path, arcname="index.html")
+
+zip_path.name  # Return the name of the zip file created
 index.html
 
 <!DOCTYPE html>
