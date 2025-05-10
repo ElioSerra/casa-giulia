@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Casa Giulia</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #fdfaf5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      z-index: 999;
+    }
+    nav .logo {
+      font-weight: bold;
+      color: #4B3B2A;
+      font-size: 1.2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #4B3B2A;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #A9825A;
+    }
+    .image-container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      margin-top: 80px;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #4B3B2A;
+      margin-bottom: 1rem;
+    }
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Casa Giulia</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#chi-siamo">Chi siamo</a></li>
+      <li><a href="#dove-siamo">Dove siamo</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <div class="image-container" id="home">
+    <img src="./home.png" alt="Casa Giulia - Brochure">
+  </div>
+
+  <section id="chi-siamo">
+    <h2>Chi siamo</h2>
+    <p>Casa Giulia nasce dall’amicizia profonda tra Domenico, Ezio e Luca. Una storia fatta di legami, dedizione e visione condivisa.</p>
+    <p>Il valore che guida tutto è rappresentato da una parola semplice ma potente: <strong>NOI</strong>, posta in lettere di ferro nel patio. È più di una casa: è un luogo di legami, ricordi e incontri.</p>
+    <p>Qui ogni ospite è accolto come uno di NOI. Ogni soggiorno diventa parte di una storia collettiva.</p>
+  </section>
+</body>
+</html>
