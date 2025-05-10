@@ -1,0 +1,34 @@
+# Create a minimal HTML that displays the full-screen brochure image as the homepage
+homepage_html = """
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Casa Giulia</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #fdfaf5;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <img src="./A_brochure_for_Casa_Giulia_is_presented_in_the_ima.png" alt="Casa Giulia - Brochure">
+</body>
+</html>
+"""
+
+# Save this HTML file
+homepage_html_path = "/mnt/data/index.html"
+with open(homepage_html_path, "w", encoding="utf-8") as file:
+    file.write(homepage_html)
+
+homepage_html_path
